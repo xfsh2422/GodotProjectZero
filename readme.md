@@ -1,6 +1,7 @@
 # Godot Project Zero: A Dark Forest
 
 Inspired by A Dark Room, the Dark Forest is an incremental experimental minimalistic game project.
+Localized by: Xiaofei Shen and Minting Lu
 
 THE GAME: (current version is `prototype.release.1.0`)
 - PLAY ON Itch https://tinytakinteller.itch.io/the-best-game-ever
