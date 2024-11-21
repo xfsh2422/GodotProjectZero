@@ -1,8 +1,14 @@
 #gdlint:ignore = max-public-methods
 extends Node
 
-const LOCALE: Dictionary = {"en": LocaleEn.EN}
-const LOCALE_NAME: Dictionary = {"en": "English"}
+const LOCALE: Dictionary = {
+    "en": LocaleEn.EN,
+    "zh": LocaleZh.ZH
+}
+const LOCALE_NAME: Dictionary = {
+    "en": "English",
+    "zh": "中文"
+}
 
 
 ## export csv(s)
@@ -11,11 +17,17 @@ const LOCALE_NAME: Dictionary = {"en": "English"}
 func _ready() -> void:
 	if false:
 		var csv: String = LocaleEn.csv()
+		var csv_zh: String = LocaleZh.csv()
 
 		var my_file := FileAccess.open("res://csv_en.txt", FileAccess.WRITE)
 		assert(my_file.is_open())
 		my_file.store_string(csv)
 		my_file.close()
+
+		var file_zh := FileAccess.open("res://csv_zh.txt", FileAccess.WRITE)
+        assert(file_zh.is_open())
+        file_zh.store_string(csv_zh)
+        file_zh.close()
 
 
 func get_ui_label(id: String) -> String:
