@@ -73,6 +73,8 @@ const UI_LABEL: Dictionary = {
 	"export_tooltip": "Copy and save this code to restore your progress later.",
 	"import_title": "Import Save",
 	"export_title": "Export Save",
+	"unnamed": "unnamed",
+	"language_button": "English",
 	"accept": "Accept",
 	"dear_diary": "Dear Diary",
 	"resource_storage": "Resource Storage",

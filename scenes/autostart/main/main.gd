@@ -49,7 +49,7 @@ func _initialize() -> void:
 	tab_tracker.change_tab(0)
 
 	var display_mode: String = SaveFile.settings["display_mode"]
-	if display_mode == "fullscreen":
+	if display_mode == tr("fullscreen"):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)

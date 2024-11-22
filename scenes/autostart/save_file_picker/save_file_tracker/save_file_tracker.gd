@@ -6,7 +6,7 @@ signal delete_save_file(save_file_name: String)
 signal new_save_file(save_file_name: String)
 signal new_input_set(save_file_name: String, new_text: String, old_text: String)
 
-const DEFAULT_SAVE_FILE_NAME: String = "unnamed"
+@onready var DEFAULT_SAVE_FILE_NAME: String = Locale.get_ui_label("unnamed")
 
 @export var save_file_item_scene: PackedScene
 

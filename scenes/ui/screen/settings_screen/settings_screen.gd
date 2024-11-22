@@ -15,6 +15,7 @@ const TAB_DATA_ID: String = "settings"
 @onready var display_resolution_button: Button = %DisplayResolutionButton
 @onready var display_language_button: Button = %DisplayLanguageButton
 @onready var watermark_button: Button = %WatermarkButton
+@onready var language_popup: PopupMenu = PopupMenu.new()
 
 ###############
 ## overrides ##
@@ -30,6 +31,7 @@ func _ready() -> void:
 	_initialize()
 	_connect_signals()
 	_load_from_save_file()
+	_setup_language_selector()
 
 
 #############
@@ -52,14 +54,13 @@ func _set_ui_labels() -> void:
 	shake_settings_slider.get_title_label().text = Locale.get_ui_label("shake")
 	typing_settings_slider.get_title_label().text = Locale.get_ui_label("typing")
 
-	display_mode_button.text = "?"
+	display_mode_button.text = Locale.get_ui_label(SaveFile.settings["display_mode"])
 	display_resolution_button.text = "?"
 	## TODO: replace resolution setting with a different one
 	display_resolution_button.disabled = true
 
-	display_language_button.text = Locale.LOCALE_NAME[SaveFile.locale]
+	display_language_button.text = Locale.get_ui_label("language_button")
 	## TODO: ADF-24 | Localization
-	display_language_button.disabled = true
 
 
 func _apply_effects() -> void:
@@ -95,7 +96,19 @@ func _load_from_save_file() -> void:
 	var height: int = SaveFile.settings["display_resolution"][1]
 	display_resolution_button.text = "{a} x {b}".format({"a": width, "b": height})
 
+func _setup_language_selector() -> void:
+	# Setup popup menu for language selection
+	language_popup.name = "LanguagePopup"
+	language_popup.add_item("English", 0)
+	language_popup.add_item("中文", 1)
+	if not language_popup.is_connected("id_pressed", Callable(self, "_on_language_selected")):
+		language_popup.connect("id_pressed", Callable(self, "_on_language_selected"))
 
+	display_language_button.add_child(language_popup)
+
+	if not display_language_button.is_connected("button_up", Callable(self, "_on_language_button_pressed")):
+		display_language_button.connect("button_up", Callable(self, "_on_language_button_pressed"))
+		
 #############
 ## signals ##
 #############
@@ -113,7 +126,7 @@ func _connect_signals() -> void:
 
 	display_mode_button.button_up.connect(_on_display_mode_button_up)
 	display_resolution_button.button_up.connect(_on_display_resolution_button_up)
-	display_language_button.button_up.connect(_on_display_language_button_up)
+	display_language_button.button_up.connect(_on_language_button_pressed)
 
 	SignalBus.display_mode_settings_updated.connect(_on_display_mode_settings_updated)
 	SignalBus.display_resolution_settings_updated.connect(_on_display_resolution_settings_updated)
@@ -147,21 +160,20 @@ func _on_display_resolution_button_up() -> void:
 	display_resolution_button.release_focus()
 
 
-func _on_display_language_button_up() -> void:
-	pass  ## TODO: ADF-24 | Localization
+func _on_language_button_pressed() -> void:
+	language_popup.popup()
 
+func _on_language_selected(id: int) -> void:
+	var selected_language: String = "en" if id == 0 else "zh"
+	SaveFile.locale = selected_language  # Update the selected language
+	_set_ui_labels()  # Update the UI labels using the new language
 
 func _on_display_mode_settings_updated(display_mode: String) -> void:
 	display_mode_button.text = Locale.get_ui_label(display_mode)
 
-
 func _on_display_resolution_settings_updated(width: int, height: int) -> void:
 	## TODO: replace resolution setting with a different one
 	display_resolution_button.text = "{a} x {b}".format({"a": width, "b": height})
-
-
-func _on_display_language_updated() -> void:
-	pass  ## TODO: ADF-24 | Localization
 
 
 func _on_watermark_mouse_entered() -> void:
