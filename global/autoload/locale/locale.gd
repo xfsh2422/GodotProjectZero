@@ -29,6 +29,11 @@ func _ready() -> void:
 		#my_file.store_string(csv)
 		#my_file.close()
 
+		var file_zh := FileAccess.open("res://csv_zh.txt", FileAccess.WRITE)
+        assert(file_zh.is_open())
+        file_zh.store_string(csv_zh)
+        file_zh.close()
+
 
 func get_ui_label(id: String) -> String:
 	return LOCALE[SaveFile.locale]["ui_label"].get(id, "")
