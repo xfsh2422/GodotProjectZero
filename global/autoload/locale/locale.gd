@@ -1,21 +1,33 @@
 #gdlint:ignore = max-public-methods
 extends Node
 
-const LOCALE: Dictionary = {"en": LocaleEn.EN}
-const LOCALE_NAME: Dictionary = {"en": "English"}
+# Preload localization files
+const LOCALE_EN = preload("res://global/const/locale/locale_en.gd")
+const LOCALE_ZH = preload("res://global/const/locale/locale_zh.gd")
 
+# Declare dictionaries
+var LOCALE: Dictionary = {
+	"en": LOCALE_EN.EN,
+	"zh": LOCALE_ZH.ZH
+}
+
+var LOCALE_NAME: Dictionary = {
+	"en": "English",
+	"zh": "简体中文"
+}
 
 ## export csv(s)
 ## TODO: part 1: function for importing csv(s) # or just ignore this todo and solve part 2 directly
 ## TODO: part 2: refactor these nodes and use csv(s) directly with Godot out of the box localization
 func _ready() -> void:
-	if false:
-		var csv: String = LocaleEn.csv()
+	SaveFile.locale = "zh"
+	#if false:
+		#var csv: String = LocaleEn.csv()
 
-		var my_file := FileAccess.open("res://csv_en.txt", FileAccess.WRITE)
-		assert(my_file.is_open())
-		my_file.store_string(csv)
-		my_file.close()
+		#var my_file := FileAccess.open("res://csv_en.txt", FileAccess.WRITE)
+		#assert(my_file.is_open())
+		#my_file.store_string(csv)
+		#my_file.close()
 
 
 func get_ui_label(id: String) -> String:
