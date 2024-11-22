@@ -100,7 +100,7 @@ func _setup_language_selector() -> void:
 	# Setup popup menu for language selection
 	language_popup.name = "LanguagePopup"
 	language_popup.add_item("English", 0)
-	language_popup.add_item("中文", 1)
+	language_popup.add_item("简体中文", 1)
 	if not language_popup.is_connected("id_pressed", Callable(self, "_on_language_selected")):
 		language_popup.connect("id_pressed", Callable(self, "_on_language_selected"))
 
