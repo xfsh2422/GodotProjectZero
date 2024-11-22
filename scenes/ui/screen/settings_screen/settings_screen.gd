@@ -16,6 +16,13 @@ const TAB_DATA_ID: String = "settings"
 @onready var display_language_button: Button = %DisplayLanguageButton
 @onready var watermark_button: Button = %WatermarkButton
 @onready var language_popup: PopupMenu = PopupMenu.new()
+@onready var audio_title_label: Label = $MarginContainer/VBoxContainer/TitleMarginContainerAudio/VBoxContainer/TitleLabel
+@onready var effects_title_label: Label = $MarginContainer/VBoxContainer/TitleMarginContainerEffects/TitleLabel
+@onready var music_tracks_label: Label = $MarginContainer/VBoxContainer/TODOMusicTracksMarginContainer/HBoxContainer/Label
+@onready var display_title_label: Label = $MarginContainer/VBoxContainer/TitleMarginContainerDisplay/TitleLabel
+@onready var watermark_label: Label = $MarginContainer/VBoxContainer/Watermark/WatermarkLabel
+
+
 
 ###############
 ## overrides ##
@@ -60,6 +67,12 @@ func _set_ui_labels() -> void:
 	display_resolution_button.disabled = true
 
 	display_language_button.text = Locale.get_ui_label("language_button")
+	audio_title_label.text = Locale.get_ui_label("audio_title")
+	effects_title_label.text = Locale.get_ui_label("effects_title")
+	display_title_label.text = Locale.get_ui_label("display_title")
+	music_tracks_label.text = Locale.get_ui_label("music_tracks")
+	watermark_label.text = Locale.get_ui_label("watermark_label")
+	
 	## TODO: ADF-24 | Localization
 
 
