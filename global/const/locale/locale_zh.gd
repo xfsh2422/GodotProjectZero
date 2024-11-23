@@ -1,4 +1,5 @@
 ## Currently, contains all in-game text's (narrative).
+extends Resource
 class_name LocaleZh
 
 const ZH: Dictionary = {
@@ -22,8 +23,13 @@ const ZH: Dictionary = {
 	"event_data_text": LocaleZh.EVENT_DATA_TEXT,
 	"npc_event_text": LocaleZh.NPC_EVENT_TEXT,
 	"npc_event_options": LocaleZh.NPC_EVENT_OPTIONS,
-	"substance_text": LocaleZh.SUBSTANCE_TEXT
+	"substance_text": LocaleZh.SUBSTANCE_TEXT,
+	"TOGGLE_TEXT": {
+		"toggle_on": "开启",
+		"toggle_off": "关闭"
+	},
 }
+
 
 # File contains long labels that we don't want to lint
 # gdlint:disable = max-line-length
@@ -222,25 +228,25 @@ const RESOURCE_GENERATOR_LABEL: Dictionary = {
 	"axe": "制作斧头",
 	"brick": "烧制粘土",
 	"clay": "挖掘粘土",
-	"coal": "",
+	"coal": "煤炭",
 	"common": "按钮1",
 	"compass": "制作指南针",
 	"beacon": "制作信标",
 	"soul": "制作灵魂",
-	"experience": "",
-	"fiber": "",
+	"experience": "经验值：",
+	"fiber": "纤维",
 	"firepit": "制作火坑",
-	"flint": "",
-	"food": "",
-	"fur": "",
+	"flint": "燧石",
+	"food": "食物",
+	"fur": "毛皮",
 	"house": "建造房屋",
-	"iron": "",
-	"iron_ore": "",
+	"iron": "铁",
+	"iron_ore": "铁矿石",
 	"land": "探索",
-	"leather": "",
+	"leather": "皮革",
 	"null": "",
 	"pickaxe": "制作镐",
-	"power": "",
+	"power": "能力",
 	"rare": "按钮2",
 	"shovel": "制作铲子",
 	"spear": "制作矛",
@@ -249,7 +255,7 @@ const RESOURCE_GENERATOR_LABEL: Dictionary = {
 	"swordsman": "训练剑士",
 	"torch": "制作火把",
 	"wood": "砍伐木头",
-	"worker": ""
+	"worker": "工人"
 }
 
 const RESOURCE_GENERATOR_TITLE: Dictionary = {

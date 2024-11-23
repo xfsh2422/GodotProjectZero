@@ -25,7 +25,8 @@ func _initialize() -> void:
 
 
 func _set_experience(total: int) -> void:
-	experience_label.text = "Experience: " + NumberUtils.format_number(total)
+	var experience_text = Locale.get_resource_generator_label("experience")
+	experience_label.text = experience_text + NumberUtils.format_number(total)
 
 
 #############

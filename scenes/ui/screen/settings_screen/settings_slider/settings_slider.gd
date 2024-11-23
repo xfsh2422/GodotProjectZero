@@ -14,6 +14,10 @@ var _value: float
 @onready var h_slider: HSlider = %HSlider
 @onready var inc_button: Button = %IncButton
 
+# Import localization files
+const LOCALE_EN = preload("res://global/const/locale/locale_en.gd")
+const LOCALE_ZH = preload("res://global/const/locale/locale_zh.gd")
+
 ###############
 ## overrides ##
 ###############
@@ -54,7 +58,22 @@ func _initialize() -> void:
 
 
 func _update_toggle_ui(user_input: bool = true) -> void:
-	toggle_button.text = "On" if _toggle else "Off"
+	# Localized toggle button text
+	var locale = SaveFile.locale if "locale" in SaveFile else "en"  # Fallback to English if undefined
+	var localized_data: Dictionary = {}
+	
+	match locale:
+		"en":
+			localized_data = LOCALE_EN.EN
+		"zh":
+			localized_data = LOCALE_ZH.ZH
+		_:
+			localized_data = LOCALE_EN.EN  # Fallback to English
+
+	var toggle_text = localized_data.get("TOGGLE_TEXT", {})
+
+	# Set the toggle button text based on the locale and toggle state
+	toggle_button.text = toggle_text.get("toggle_on", "On") if _toggle else toggle_text.get("toggle_off", "Off")
 
 	if user_input:
 		data_changed.emit(_toggle, _value)
