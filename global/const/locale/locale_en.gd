@@ -360,9 +360,9 @@ const RESOURCE_GENERATOR_FLAVOR: Dictionary = {
 }
 
 const RESOURCE_GENERATOR_MAX_FLAVOR: Dictionary = {
-	"CREEK": "CREEK",
-	"FOREST": "FOREST",
-	"WILD": "WILD",
+	"CREEK": "The bottom of the shallow creek is ready for picking.",
+	"FOREST": "Things are waiting to be found within.",
+	"WILD": "The deep forest howls and screeches.",
 	"axe": "Something wails amongst the trees.",
 	"brick": "Brick",
 	"clay": "Clay",
@@ -401,7 +401,7 @@ const RESOURCE_GENERATOR_DISPLAY_NAME: Dictionary = {
 	"CREEK": "CREEK",
 	"FOREST": "FOREST",
 	"WILD": "WILD",
-	"axe": "Something wails amongst the trees.",
+	"axe": "Axe",
 	"brick": "Brick",
 	"clay": "Clay",
 	"coal": "Coal",
@@ -500,7 +500,7 @@ const TAB_DATA_TITLES: Dictionary = {
 	"manager": [" Population "],
 	"enemy": [" Darkness "],
 	"unknown": [" Unknown "],
-	"soul": [" Substance "],
+	"soul": [" Soul "],
 	"starway": [" ??? ", " Heart "],
 	"settings": [" @ "],
 	"substance": [" Substance "]
