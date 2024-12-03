@@ -280,7 +280,12 @@ const RESOURCE_GENERATOR_LABEL: Dictionary = {
 	"swordsman": "Train a Swordsman",
 	"torch": "Make a Torch",
 	"wood": "Chop Wood",
-	"worker": "worker"
+	"worker": "worker",
+	"singularity": "Singularity",
+	"charm": "Charm",
+	"essence": "Essence",
+	"spirit": "Spirit",
+	"shadow": "Shadow"
 }
 
 const RESOURCE_GENERATOR_TITLE: Dictionary = {
@@ -318,7 +323,13 @@ const RESOURCE_GENERATOR_TITLE: Dictionary = {
 	"swordsman": "Swordsman",
 	"torch": "Torch",
 	"wood": "Chop Wood",
-	"worker": "Worker"
+	"worker": "Worker",
+	"soulstone": "Soulstone",
+	"singularity": "Singularity",
+	"charm": "Charm",
+	"essence": "Essence",
+	"spirit": "Spirit",
+	"shadow": "Shadow"
 }
 
 const RESOURCE_GENERATOR_FLAVOR: Dictionary = {
@@ -356,7 +367,12 @@ const RESOURCE_GENERATOR_FLAVOR: Dictionary = {
 	"swordsman": "No match for the black swordsman, but will fight against The Darkness for you.",
 	"torch": "Will guide the way during the night.",
 	"wood": "Eventually, all humans shall die, and all trees shall be felled.",
-	"worker": "Worker"
+	"worker": "Worker",
+	"singularity": "Singularity",
+	"charm": "Charm",
+	"essence": "Essence",
+	"spirit": "Spirit",
+	"shadow": "Shadow"
 }
 
 const RESOURCE_GENERATOR_MAX_FLAVOR: Dictionary = {
@@ -394,7 +410,12 @@ const RESOURCE_GENERATOR_MAX_FLAVOR: Dictionary = {
 	"swordsman": "Swordsman",
 	"torch": "Torch",
 	"wood": "Wood",
-	"worker": "Worker"
+	"worker": "Worker",
+	"singularity": "Singularity",
+	"charm": "Charm",
+	"essence": "Essence",
+	"spirit": "Spirit",
+	"shadow": "Shadow"
 }
 
 const RESOURCE_GENERATOR_DISPLAY_NAME: Dictionary = {
@@ -429,7 +450,13 @@ const RESOURCE_GENERATOR_DISPLAY_NAME: Dictionary = {
 	"swordsman": "Swordsman",
 	"torch": "Torch",
 	"wood": "Wood",
-	"worker": "Peasant"
+	"worker": "Peasant",
+	"soulstone": "Soulstone",
+	"singularity": "Singularity",
+	"charm": "Charm",
+	"essence": "Essence",
+	"spirit": "Spirit",
+	"shadow": "Shadow"
 }
 
 const WORKER_ROLE_TITLE: Dictionary = {

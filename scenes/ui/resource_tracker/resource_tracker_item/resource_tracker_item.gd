@@ -65,7 +65,7 @@ func get_default_color() -> Color:
 
 func display_resource(amount: int = 0) -> void:
 	var id: String = get_id()
-	if Game.WORKER_ROLE_RESOURCE.has(id):
+	if Game.WORKER_ROLE_RESOURCE_KEY.has(id):
 		amount = SaveFile.workers.get(id, 0)
 
 	var resource_name: String = _resource_generator.get_display_name()
@@ -132,7 +132,7 @@ func _on_worker_efficiency_updated(efficiencies: Dictionary, _generated: bool) -
 
 func _on_worker_updated(_id: String, _total: int, _amount: int) -> void:
 	var id: String = get_id()
-	if Game.WORKER_ROLE_RESOURCE.has(id):
+	if Game.WORKER_ROLE_RESOURCE_KEY.has(id):
 		display_resource()
 
 

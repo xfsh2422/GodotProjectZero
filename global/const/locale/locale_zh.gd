@@ -177,8 +177,8 @@ const ENEMY_DATA_TITLE: Dictionary = {
 	"dragon": "黑暗高级守护者",
 	"dino": "黑暗使者",
 	"skeleton": "黑暗侍僧",
-	"slime": "黑暗王子，史莱姆",
-	"angel": "死亡天使，黑暗之器"
+	"slime": "黑暗王子 史莱姆",
+	"angel": "死亡天使 黑暗之器"
 }
 
 const ENEMY_DATA_OPTION_TITLE: Dictionary = {
@@ -240,7 +240,7 @@ const RESOURCE_GENERATOR_LABEL: Dictionary = {
 	"food": "食物",
 	"fur": "毛皮",
 	"house": "建造房屋",
-	"iron": "铁",
+	"iron": "铁锭",
 	"iron_ore": "铁矿石",
 	"land": "探索",
 	"leather": "皮革",
@@ -255,7 +255,12 @@ const RESOURCE_GENERATOR_LABEL: Dictionary = {
 	"swordsman": "训练剑士",
 	"torch": "制作火把",
 	"wood": "砍伐木头",
-	"worker": "工人"
+	"worker": "工人",
+	"singularity": "奇点",
+	"charm": "灵符",
+	"essence": "本质",
+	"spirit": "灵",
+	"shadow": "影"
 }
 
 const RESOURCE_GENERATOR_TITLE: Dictionary = {
@@ -266,11 +271,7 @@ const RESOURCE_GENERATOR_TITLE: Dictionary = {
 	"axe": "斧头",
 	"brick": "烧制粘土",
 	"clay": "挖掘粘土",
-<<<<<<< Updated upstream
 	"coal": "开采煤炭",
-=======
-	"coal": "煤炭",
->>>>>>> Stashed changes
 	"common": "按钮一",
 	"compass": "指南针",
 	"beacon": "星光信标",
@@ -280,7 +281,6 @@ const RESOURCE_GENERATOR_TITLE: Dictionary = {
 	"firepit": "火坑",
 	"flint": "燧石",
 	"food": "食物",
-<<<<<<< Updated upstream
 	"fur": "兽皮",
 	"house": "房屋",
 	"iron": "铁锭",
@@ -290,19 +290,7 @@ const RESOURCE_GENERATOR_TITLE: Dictionary = {
 	"null": "空",
 	"pickaxe": "镐",
 	"power": "能量",
-	"rare": "按钮二",
-=======
-	"fur": "毛皮",
-	"house": "房屋",
-	"iron": "铁",
-	"iron_ore": "铁矿石",
-	"land": "探索未知",
-	"leather": "皮革",
-	"null": "",
-	"pickaxe": "镐",
-	"power": "能力",
 	"rare": "珍贵",
->>>>>>> Stashed changes
 	"shovel": "铲子",
 	"spear": "矛",
 	"stone": "采石",
@@ -310,7 +298,13 @@ const RESOURCE_GENERATOR_TITLE: Dictionary = {
 	"swordsman": "剑士",
 	"torch": "火把",
 	"wood": "伐木",
-	"worker": "工人"
+	"worker": "工人",
+	"soulstone": "灵魂石",
+	"singularity": "奇点",
+	"charm": "灵符",
+	"essence": "本质",
+	"spirit": "灵",
+	"shadow": "影"
 }
 
 const RESOURCE_GENERATOR_FLAVOR: Dictionary = {
@@ -319,31 +313,6 @@ const RESOURCE_GENERATOR_FLAVOR: Dictionary = {
 	"WILD": "深林中传来嚎叫和尖啸。",
 	"CAVE": "废弃的矿井延伸进空旷、黑暗的洞穴。",
 	"axe": "锋利而珍贵，但被血迹染红。",
-<<<<<<< Updated upstream
-	"brick": "一砖一瓦，人类从自然中抽离。",
-	"clay": "穿透泥泞水域以取其精华。",
-	"coal": "煤炭",
-	"common": "为常见资源进行冒险。",
-	"compass": "导航暗影迷雾；新的疯狂等待着。",
-	"beacon": "雾中的记忆浮现出蓝图。这需要……一颗灵魂石？",
-	"soul": "灵魂",
-	"experience": "经验值",
-	"fiber": "纤维",
-	"firepit": "温暖、明亮、舒适；如父母的抚慰。",
-	"flint": "燧石",
-	"food": "食物",
-	"fur": "皮毛",
-	"house": "简陋的房屋，条件恶劣。安全。",
-	"iron": "铁",
-	"iron_ore": "铁矿石",
-	"land": "体验你的新现实。",
-	"leather": "皮革",
-	"null": "空",
-	"pickaxe": "通向财富和怨恨。",
-	"power": "能量",
-	"rare": "探索世界以寻找稀有资源。",
-	"shovel": "同样挖掘粘土和尸体。",
-=======
 	"brick": "一砖一瓦，人类逐渐与自然隔绝。",
 	"clay": "穿透泥泞水域，以取其精华。",
 	"coal": "煤炭",
@@ -358,97 +327,67 @@ const RESOURCE_GENERATOR_FLAVOR: Dictionary = {
 	"food": "食物",
 	"fur": "毛皮",
 	"house": "简陋的房屋，条件恶劣，但安全。",
-	"iron": "铁",
+	"iron": "铁锭",
 	"iron_ore": "铁矿石",
 	"land": "探索你的新世界。",
 	"leather": "皮革",
-	"null": "",
+	"null": "空",
 	"pickaxe": "通向财富，也通向怨恨。",
 	"power": "能力",
 	"rare": "探索世界，寻找珍贵资源。",
 	"shovel": "挖掘粘土，也挖出尸体。",
->>>>>>> Stashed changes
 	"spear": "进入荒野狩猎。",
 	"stone": "打碎古老的巨石；建造新世界。",
 	"sword": "野蛮而粗糙，但仍然致命。",
 	"swordsman": "不是黑剑士的对手，但会为你对抗黑暗。",
-<<<<<<< Updated upstream
-	"torch": "在夜间引导道路。",
-	"wood": "最终，所有人都将死去，所有树木都将被砍倒。",
-	"worker": "农民"
+	"singularity": "奇点",
+	"charm": "灵符",
+	"essence": "本质",
+	"spirit": "灵",
+	"shadow": "影"
 }
 
 const RESOURCE_GENERATOR_MAX_FLAVOR: Dictionary = {
-	"CREEK": "小溪",
-	"FOREST": "森林",
-	"WILD": "荒野",
-	"axe": "树林间传来某种哀嚎。",
-	"brick": "砖块",
-	"clay": "粘土",
-	"coal": "煤炭",
-	"common": "普通",
-	"compass": "越过森林，通往更深的黑暗...",
-	"beacon": "发出明亮的光芒，穿透阴霾。似乎揭示了森林中那些被禁忌的区域...",
-	"soul": "我已经...准备好重生了。",
-	"experience": "经验值",
-	"fiber": "纤维",
-	"firepit": "火焰温暖地燃烧着，在黑暗中闪耀着光芒。",
-=======
-	"torch": "在夜间照亮前路。",
-	"wood": "人终将一死，树木也终将倒下。",
-	"worker": "工人"
-}
-
-const RESOURCE_GENERATOR_MAX_FLAVOR: Dictionary = {
-"CREEK": "浅溪的底部已可以进行采集。",
+	"CREEK": "浅溪的底部已可以进行采集。",
 	"FOREST": "森林内有待发现的事物。",
 	"WILD": "深林中传来嚎叫和尖啸。",
-	"axe": "树木间传来恸哭之声。",
-	"brick": "砖",
+	"axe": "林中传来哀嚎。",
+	"brick": "砖块",
 	"clay": "粘土",
 	"coal": "煤炭",
 	"common": "普通",
 	"compass": "穿过森林... 进入更深的黑暗",
 	"beacon": "发出的光芒穿透了阴霾。似乎揭示了森林的禁地...",
-	"soul": "我...已经准备好重生。",
+	"soul": "我...已准备好重生。",
 	"experience": "经验值",
 	"fiber": "纤维",
-	"firepit": "火堆烧得又旺又暖，是黑暗中的一束光。",
->>>>>>> Stashed changes
+	"firepit": "火焰温暖地燃烧着，在黑暗中闪耀着光芒。",
+	"torch": "在夜间照亮前路。",
+	"wood": "人终将一死，树木也终将倒下。",
+	"worker": "农民",
 	"flint": "燧石",
 	"food": "食物",
 	"fur": "皮毛",
 	"house": "房屋",
-	"iron": "铁",
+	"iron": "铁锭",
 	"iron_ore": "铁矿石",
 	"land": "土地",
 	"leather": "皮革",
-<<<<<<< Updated upstream
 	"null": "空",
 	"pickaxe": "别挖得太深。地底下的居民可不会高兴。",
 	"power": "能量",
 	"rare": "稀有",
 	"shovel": "铲子",
 	"spear": "独自前行很危险，带上这个吧。",
-=======
-	"null": "",
-	"pickaxe": "不要挖得太深。那些住在下面的东西不会高兴。",
-	"power": "力量",
-	"rare": "珍贵",
-	"shovel": "铲子",
-	"spear": "独自前行危险万分，带上这个。",
->>>>>>> Stashed changes
 	"stone": "石头",
 	"sword": "剑",
 	"swordsman": "剑士",
-	"torch": "火把",
-	"wood": "木头",
-	"worker": "工人"
-<<<<<<< Updated upstream
-	}
-=======
+	"singularity": "奇点",
+	"charm": "灵符",
+	"essence": "本质",
+	"spirit": "灵",
+	"shadow": "影"
 }
->>>>>>> Stashed changes
 
 const RESOURCE_GENERATOR_DISPLAY_NAME: Dictionary = {
 	"CREEK": "小溪",
@@ -460,135 +399,84 @@ const RESOURCE_GENERATOR_DISPLAY_NAME: Dictionary = {
 	"coal": "煤炭",
 	"common": "普通",
 	"compass": "指南针",
-<<<<<<< Updated upstream
 	"experience": "经验值",
 	"fiber": "纤维",
 	"firepit": "火堆",
 	"flint": "燧石",
 	"food": "食物",
 	"fur": "皮毛",
-=======
-	"experience": "经验",
-	"fiber": "纤维",
-	"firepit": "火坑",
-	"flint": "燧石",
-	"food": "食物",
-	"fur": "毛皮",
->>>>>>> Stashed changes
 	"house": "房屋",
-	"iron": "铁",
+	"iron": "铁锭",
 	"iron_ore": "铁矿石",
 	"land": "土地",
 	"leather": "皮革",
-<<<<<<< Updated upstream
 	"null": "空",
 	"pickaxe": "镐子",
 	"power": "能量",
 	"rare": "稀有",
-=======
-	"null": "无",
-	"pickaxe": "镐",
-	"power": "力量",
-	"rare": "珍贵",
->>>>>>> Stashed changes
 	"shovel": "铲子",
 	"spear": "长矛",
 	"stone": "石头",
 	"sword": "剑",
 	"swordsman": "剑士",
 	"torch": "火把",
-<<<<<<< Updated upstream
-	"wood": "木头",
-=======
 	"wood": "木材",
->>>>>>> Stashed changes
-	"worker": "农民"
+	"worker": "农民",
+	"soulstone": "灵魂石",
+	"singularity": "奇点",
+	"charm": "灵符",
+	"essence": "本质",
+	"spirit": "灵",
+	"shadow": "影"
 }
 
 const WORKER_ROLE_TITLE: Dictionary = {
-<<<<<<< Updated upstream
-	"clay_digger": "挖土工",
-	"coal_miner": "煤矿工",
-	"experience": "经验值",
-=======
+
 	"clay_digger": "挖粘土工",
 	"coal_miner": "煤矿工",
 	"experience": "经验",
->>>>>>> Stashed changes
 	"explorer": "探险家",
 	"explorerer": "探险家",
 	"hunter": "猎人",
 	"iron_miner": "铁矿工",
-<<<<<<< Updated upstream
 	"iron_smelter": "炼铁工",
 	"lumberjack": "伐木工",
 	"mason": "石匠",
 	"recruiter": "招募官",
 	"sergeant": "军士长",
 	"smelter": "陶土烘焙师",
-=======
-	"iron_smelter": "铁熔炼工",
-	"lumberjack": "伐木工",
-	"mason": "石匠",
-	"recruiter": "招募员",
-	"sergeant": "中士",
-	"smelter": "粘土烧制工",
->>>>>>> Stashed changes
 	"stone_miner": "采石工",
 	"swordsman": "剑士",
 	"swordsmith": "铸剑师",
 	"tailor": "裁缝",
 	"tanner": "制革工",
-<<<<<<< Updated upstream
 	"torch_man": "火把手",
-=======
-	"torch_man": "火把工",
->>>>>>> Stashed changes
 	"wanderer": "流浪者",
 	"worker": "农民"
 }
 
 const WORKER_ROLE_FLAVOR: Dictionary = {
 	"clay_digger": "泥泞的湖泊暂时保守着她的秘密。",
-<<<<<<< Updated upstream
 	"coal_miner": "发现表层煤矿需要敏锐的眼力。",
 	"experience": "经验值",
 	"explorer": "旅途漫长，但他们知道前行的道路。",
 	"explorerer": "探险家",
-	"hunter": "会保存食物，但用皮毛来偿还你。",
-=======
-	"coal_miner": "眼神敏锐才能发现表层煤矿。",
-	"experience": "经验值",
-	"explorer": "旅途漫长，但他们知道前进的方向。",
-	"explorerer": "探险家",
-	"hunter": "吃掉食物，但会用皮毛来偿还你。",
->>>>>>> Stashed changes
+	"hunter": "会吃掉食物，但用皮毛来偿还你。",
 	"iron_miner": "洞穴深处有闪闪发光的岩石。",
 	"iron_smelter": "只需你支付材料和少量皮毛。",
 	"lumberjack": "大树不会自己成为木材。",
 	"mason": "技艺高超的工匠。",
-<<<<<<< Updated upstream
 	"recruiter": "招募官",
-	"sergeant": "几片皮毛作为我的专业费是公平的。",
+	"sergeant": "几片皮毛买我的技术，一点不亏。",
 	"smelter": "坐在火坑旁取出砖块。",
 	"stone_miner": "一块石头，两块石头，我们开始吧。",
-=======
-	"recruiter": "招募者",
-	"sergeant": "几片皮毛买我的技术，一点不亏。",
-	"smelter": "会坐在火坑旁取出砖块。",
-	"stone_miner": "一块石头，两块石头，就是这样。",
->>>>>>> Stashed changes
 	"swordsman": "将为你对抗黑暗。",
 	"swordsmith": "是的，我们使用皮毛作为货币。",
 	"tailor": "一次编织一根纤维绳。",
 	"tanner": "知道如何给动物剥皮，需支付皮毛。",
 	"torch_man": "将为矿工和探险者准备必需品。",
 	"wanderer": "流浪者",
-<<<<<<< Updated upstream
-	"worker": "在任何地方搜寻和收集食物。"
-=======
 	"worker": "到处搜寻和收集食物。"
->>>>>>> Stashed changes
 }
 
 const TAB_DATA_TITLES: Dictionary = {

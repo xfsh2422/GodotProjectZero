@@ -30,9 +30,9 @@ func _progress_worker_controller(efficiencies: Dictionary, cycles: int) -> Dicti
 	if total_efficiency.has("house"):
 		var house_workers: int = SaveFile.get_house_workers()
 		var worker_inc: int = Limits.safe_mult(house_workers, total_efficiency.get("house", 0))
-		total_efficiency[Game.WORKER_RESOURCE_ID] = worker_inc
+		total_efficiency[Game.WORKER_RESOURCE_ID_KEY] = worker_inc
 	else:
-		total_efficiency[Game.WORKER_RESOURCE_ID] = 0
+		total_efficiency[Game.WORKER_RESOURCE_ID_KEY] = 0
 
 	# check for decreasing resources
 	var ids: Array = total_efficiency.keys()

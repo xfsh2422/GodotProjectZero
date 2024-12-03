@@ -94,7 +94,7 @@ func _get_settings_population_scale(id: String) -> int:
 
 func _handle_add(worker_role: WorkerRole) -> void:
 	var id: String = worker_role.id
-	var amount: int = _get_settings_population_scale(Game.WORKER_RESOURCE_ID)
+	var amount: int = _get_settings_population_scale(Game.WORKER_RESOURCE_ID_KEY)
 	SignalBus.worker_allocated.emit(id, amount, name)
 
 
@@ -115,7 +115,7 @@ func _get_max_mult(id: String, mult: int) -> int:
 		total_roles = roles * mult
 
 	# cannot add more than peasant count, round down mult
-	var peasants: int = SaveFile.workers.get(Game.WORKER_RESOURCE_ID, 0)
+	var peasants: int = SaveFile.workers.get(Game.WORKER_RESOURCE_ID_KEY, 0)
 	if total_roles > peasants:
 		mult = peasants / roles
 

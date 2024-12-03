@@ -1,10 +1,33 @@
 class_name Game
+extends Node
 
-const WORKER_RESOURCE_ID: String = "worker"
-const WORKER_ROLE_RESOURCE: Array[String] = [WORKER_RESOURCE_ID, "swordsman"]
+const WORKER_RESOURCE_ID_KEY: String = "worker"
+const WORKER_ROLE_RESOURCE_KEY: Array[String] = ["worker", "swordsman"]
+const VERSION_MAJOR_KEY: String = "prototype"
+const VERSION_MINOR_KEY: String = "release 1.0"
 
-const VERSION_MAJOR: String = "prototype"
-const VERSION_MINOR: String = "release 1.0"
+var WORKER_RESOURCE_ID: String
+var WORKER_ROLE_RESOURCE: Array[String]
+var VERSION_MAJOR: String
+var VERSION_MINOR: String
+
+@onready var locale = preload("res://global/autoload/locale/locale.gd").new()
+
+func _ready() -> void:
+	# Set the locale (this can be changed based on user preference)
+	locale.set_locale("zh")  # Example: Set to Simplified Chinese (change to "en" for English)
+
+	# Localize constants at runtime
+	WORKER_RESOURCE_ID = locale.get_ui_label(WORKER_RESOURCE_ID_KEY)
+	WORKER_ROLE_RESOURCE = [WORKER_RESOURCE_ID, locale.get_ui_label("swordsman")]
+	VERSION_MAJOR = locale.get_ui_label(VERSION_MAJOR_KEY)
+	VERSION_MINOR = locale.get_ui_label(VERSION_MINOR_KEY)
+	
+	# Example usage of the localized values
+	print(WORKER_RESOURCE_ID)  # Should print "工人" if the locale is "zh"
+	print(WORKER_ROLE_RESOURCE)  # Should print ["工人", "剑士"]
+	print(VERSION_MAJOR)  # Should print "原型" for the Chinese locale
+	print(VERSION_MINOR)  # Should print "版本 1.0"
 
 const PARAMS: Dictionary = PARAMS_PROD  #PARAMS_PROD  #PARAMS_DEBUG
 

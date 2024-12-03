@@ -19,7 +19,7 @@ func _handle_on_worker_allocated(id: String, amount: int) -> void:
 	if amount == 0:
 		return
 
-	var wr_id: String = Game.WORKER_RESOURCE_ID
+	var wr_id: String = Game.WORKER_RESOURCE_ID_KEY
 	if id == wr_id:
 		return
 

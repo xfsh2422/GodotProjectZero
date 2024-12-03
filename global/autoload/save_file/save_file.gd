@@ -115,7 +115,7 @@ func scale_by_shadows(id: String, amount: int, percent: int = -1) -> int:
 	var unique: bool = false if resource_generator == null else resource_generator.is_unique()
 	if (
 		id not in ["singularity", "experience"]
-		and id not in Game.WORKER_ROLE_RESOURCE
+		and id not in Game.WORKER_ROLE_RESOURCE_KEY
 		and not unique
 	):
 		if percent < 0:
@@ -594,8 +594,8 @@ func _update_metadata() -> void:
 	metadata["last_utc_time"] = Time.get_datetime_dict_from_system(true)
 	metadata["last_timezone"] = Time.get_time_zone_from_system()
 	_sanitize_timezone(metadata["last_timezone"])
-	metadata["last_version_major"] = Game.VERSION_MAJOR
-	metadata["last_version_minor"] = Game.VERSION_MINOR
+	metadata["last_version_major"] = Game.VERSION_MAJOR_KEY
+	metadata["last_version_minor"] = Game.VERSION_MINOR_KEY
 	metadata["total_autosave_seconds"] = (
 		metadata.get("total_autosave_seconds", 0) + AUTOSAVE_SECONDS
 	)
@@ -605,9 +605,9 @@ func _update_metadata() -> void:
 		metadata["first_timezone"] = Time.get_time_zone_from_system()
 		_sanitize_timezone(metadata["first_timezone"])
 	if metadata.get("first_version_major", null) == null:
-		metadata["first_version_major"] = Game.VERSION_MAJOR
+		metadata["first_version_major"] = Game.VERSION_MAJOR_KEY
 	if metadata.get("first_version_minor", null) == null:
-		metadata["first_version_minor"] = Game.VERSION_MINOR
+		metadata["first_version_minor"] = Game.VERSION_MINOR_KEY
 	if metadata.get("save_file_name", null) == null:
 		metadata["save_file_name"] = "unnamed"
 
@@ -668,17 +668,17 @@ func check_backward_corrupt_worker_role(save_data: Dictionary) -> void:
 	var max_worker_resource: int = (
 		Limits.GLOBAL_MAX_AMOUNT + save_data["resources"].get("swordsman", 0)
 	)
-	if save_data["resources"].get(Game.WORKER_RESOURCE_ID, 0) > max_worker_resource:
-		save_data["resources"][Game.WORKER_RESOURCE_ID] = max_worker_resource
+	if save_data["resources"].get(Game.WORKER_RESOURCE_ID_KEY, 0) > max_worker_resource:
+		save_data["resources"][Game.WORKER_RESOURCE_ID_KEY] = max_worker_resource
 
 	var max_worker_role: int = Limits.GLOBAL_MAX_AMOUNT
-	if save_data["workers"].get(Game.WORKER_RESOURCE_ID, 0) > max_worker_role:
-		save_data["workers"][Game.WORKER_RESOURCE_ID] = max_worker_role
+	if save_data["workers"].get(Game.WORKER_RESOURCE_ID_KEY, 0) > max_worker_role:
+		save_data["workers"][Game.WORKER_RESOURCE_ID_KEY] = max_worker_role
 
 	var total_roles: int = 0
 	for id: String in save_data["workers"]:
 		total_roles += save_data["workers"][id]
-	var worker_resources: int = save_data["resources"].get(Game.WORKER_RESOURCE_ID, 0)
+	var worker_resources: int = save_data["resources"].get(Game.WORKER_RESOURCE_ID_KEY, 0)
 	var error: int = worker_resources - total_roles
 	if error != 0:
 		if Game.PARAMS["debug_logs"]:
@@ -695,12 +695,12 @@ func check_backward_corrupt_worker_role(save_data: Dictionary) -> void:
 				)
 			)
 		if error > 0:
-			save_data["workers"][Game.WORKER_RESOURCE_ID] = (
-				save_data["workers"].get(Game.WORKER_RESOURCE_ID, 0) + error
+			save_data["workers"][Game.WORKER_RESOURCE_ID_KEY] = (
+				save_data["workers"].get(Game.WORKER_RESOURCE_ID_KEY, 0) + error
 			)
 		elif error < 0:
-			save_data["resources"][Game.WORKER_RESOURCE_ID] = (
-				save_data["resources"].get(Game.WORKER_RESOURCE_ID, 0) - error
+			save_data["resources"][Game.WORKER_RESOURCE_ID_KEY] = (
+				save_data["resources"].get(Game.WORKER_RESOURCE_ID_KEY, 0) - error
 			)
 
 
@@ -733,7 +733,7 @@ func _check_backward_week_5(save_data: Dictionary) -> void:
 	if cat_events.get("cat_intro", 0) != 0:
 		cat_events["cat_intro"] = -1
 
-	save_data.get("metadata", {})["last_version_minor"] = Game.VERSION_MINOR
+	save_data.get("metadata", {})["last_version_minor"] = Game.VERSION_MINOR_KEY
 
 
 ##############
@@ -772,7 +772,7 @@ func _on_offline_progress_processed(
 ) -> void:
 	_autosave(true, true)
 	SignalBus.worker_updated.emit(
-		Game.WORKER_RESOURCE_ID, workers.get(Game.WORKER_RESOURCE_ID, 0), 0
+		Game.WORKER_RESOURCE_ID_KEY, workers.get(Game.WORKER_RESOURCE_ID_KEY, 0), 0
 	)
 
 

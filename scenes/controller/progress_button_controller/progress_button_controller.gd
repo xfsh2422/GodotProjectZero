@@ -31,7 +31,7 @@ func _pay_resources(costs: Dictionary, id: String, factor: int = 1) -> void:
 
 
 func _can_pay_worker(worker_costs: Dictionary) -> bool:
-	if not worker_costs.is_empty() and SaveFile.workers.get(Game.WORKER_RESOURCE_ID, 0) <= 0:
+	if not worker_costs.is_empty() and SaveFile.workers.get(Game.WORKER_RESOURCE_ID_KEY, 0) <= 0:
 		return false
 	var house: int = SaveFile.resources.get("house", 0)
 	if house >= Limits.GLOBAL_MAX_AMOUNT:
@@ -103,7 +103,7 @@ func _handle_progress_button_pressed(resource_generator: ResourceGenerator, sour
 	var has_strength: bool = SaveFile.substances.get("strength", 0) > 0
 	var strenth_factor: int = 1
 	if for_charm and has_strength:
-		var peasants: int = SaveFile.workers.get(Game.WORKER_RESOURCE_ID, 0)
+		var peasants: int = SaveFile.workers.get(Game.WORKER_RESOURCE_ID_KEY, 0)
 		strenth_factor = min(
 			_get_worker_eff(worker_cost, peasants), _get_eff(resource_cost, peasants)
 		)

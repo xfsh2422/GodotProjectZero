@@ -59,7 +59,7 @@ func _generate(generate: bool = true) -> void:
 func _calculate_generated_worker_resource_from_houses(resources: Dictionary) -> int:
 	var house_workers: int = SaveFile.get_house_workers()
 	var house: int = resources.get("house", 0)
-	var resource_id: String = Game.WORKER_RESOURCE_ID
+	var resource_id: String = Game.WORKER_RESOURCE_ID_KEY
 	# [WORKAROUND] : safe_mult uses factor = 2 for reasons beyond your comprehension
 	var max_workers: int = Limits.safe_mult(house_workers, house, 2) + resources.get("firepit", 0)
 	var current_workers: int = resources.get(resource_id, 0)
@@ -105,7 +105,7 @@ func _calculate_generated_amounts() -> Dictionary:
 		_generate_from(resources, -efficiency, generated_workers, w_consume, -count, total_eff)
 		_generate_from(resources, efficiency, generated_resources, produces, count, total_eff)
 
-	var resource_id: String = Game.WORKER_RESOURCE_ID
+	var resource_id: String = Game.WORKER_RESOURCE_ID_KEY
 	var new_workers: int = _calculate_generated_worker_resource_from_houses(resources)
 	if new_workers != 0:
 		generated_resources[resource_id] = Limits.safe_add(

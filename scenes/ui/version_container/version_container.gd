@@ -22,7 +22,7 @@ func _ready() -> void:
 
 
 func _load_from_save_file() -> void:
-	version_label.text = Game.VERSION_MAJOR + "\n" + Game.VERSION_MINOR
+	version_label.text = Game.VERSION_MAJOR_KEY + "\n" + Game.VERSION_MINOR_KEY
 
 	var theme_toggle_id: String = SaveFile.settings.get("theme", null)
 	if theme_toggle_id != null:

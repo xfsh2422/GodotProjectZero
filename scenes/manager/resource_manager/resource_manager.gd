@@ -24,7 +24,7 @@ func _handle_on_resource_generated(id: String, amount: int, source_id: String) -
 	# worker resource represents total population, we want to apply the limit on peasant's instead
 	# (perhaps worker roles should have been just resources, to avoid edge cases like this one !!)
 	var total: int = SaveFile.resources.get(id, 0)
-	if id == Game.WORKER_RESOURCE_ID:
+	if id == Game.WORKER_RESOURCE_ID_KEY:
 		total = total - SaveFile.resources.get("swordsman", 0)
 	amount = Limits.safe_add_factor(total, amount)
 
@@ -41,7 +41,7 @@ func _handle_on_resource_generated(id: String, amount: int, source_id: String) -
 	SignalBus.resource_updated.emit(id, SaveFile.resources.get(id, 0), amount, source_id)
 
 	# worker amounts are backed up by resource amounts
-	if Game.WORKER_ROLE_RESOURCE.has(id):
+	if Game.WORKER_ROLE_RESOURCE_KEY.has(id):
 		SignalBus.worker_generated.emit(id, amount, name)
 
 	# some resource generators have a max amount

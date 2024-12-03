@@ -43,7 +43,7 @@ func _handle_on_resource_increased(observed_id: String, observed_total: int) -> 
 	if observed_id == "firepit" and observed_total >= 1:
 		_unlock_resource_generator_if("brick")
 		_level_up_tab("world", 2)
-		_unlock_worker_role_if(Game.WORKER_RESOURCE_ID)
+		_unlock_worker_role_if(Game.WORKER_RESOURCE_ID_KEY)
 	if observed_id == "axe" and observed_total >= 1:
 		_unlock_resource_generator_if("wood")
 		_unlock_worker_role_if("lumberjack")
@@ -61,7 +61,7 @@ func _handle_on_resource_increased(observed_id: String, observed_total: int) -> 
 	if observed_id == "brick" and observed_total >= 1:
 		_unlock_resource_generator_if("house")
 
-	if observed_id == Game.WORKER_RESOURCE_ID:
+	if observed_id == Game.WORKER_RESOURCE_ID_KEY:
 		if ResourceManager.get_total_generated(observed_id) >= 1:
 			_trigger_unique_unlock_event("firepit_worker")
 			_unlock_tab_if("manager")
