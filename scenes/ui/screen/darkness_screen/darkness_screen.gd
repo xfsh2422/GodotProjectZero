@@ -40,7 +40,6 @@ var _death: bool = false
 ## overrides ##
 ###############
 
-
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_THEME_CHANGED:
 		_propagate_theme_to_virtual_children()
